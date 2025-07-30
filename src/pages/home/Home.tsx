@@ -2,7 +2,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonLabel } from '
 // import { CourtDetails, JudicialStructure, PersonalStatusDepartment } from 'moj-org-management';
 
 // helper
-import { getLiferayAuthDetails, getLiferayEnvDetails } from '../../helper/helper';
+// import { getLiferayAuthDetails, getLiferayEnvDetails } from '../../helper/helper';
 
 const Home: React.FC = () => {
     return (
