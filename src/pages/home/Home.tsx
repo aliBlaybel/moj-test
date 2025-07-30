@@ -13,7 +13,7 @@ const Home: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
-                <IonLabel>Test</IonLabel>
+                <IonLabel>Test Blaybel</IonLabel>
                 {/* <PersonalStatusDepartment isMobileApp={true}
                     authDetails={getLiferayAuthDetails()}
                     envDetails={getLiferayEnvDetails()}

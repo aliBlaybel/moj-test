@@ -9,7 +9,7 @@ const Login: React.FC = () => {
     const [showToast, setShowToast] = useState(false);
 
     const handleLogin = () => {
-        if (email === 'ali' && password === '123456') {
+        if (email === 'ali' && password === '123') {
             history.push('/home');
         } else {
             setShowToast(true);
@@ -25,7 +25,7 @@ const Login: React.FC = () => {
             </IonHeader>
             <IonContent className="ion-padding">
                 <IonItem>
-                    <IonLabel position="floating">Email</IonLabel>
+                    <IonLabel position="floating">Username</IonLabel>
                     <IonInput type="email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} />
                 </IonItem>
 
