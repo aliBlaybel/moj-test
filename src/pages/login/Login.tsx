@@ -9,11 +9,12 @@ const Login: React.FC = () => {
     const [showToast, setShowToast] = useState(false);
 
     const handleLogin = () => {
-        if (email === 'ali' && password === '123') {
-            history.push('/home');
-        } else {
-            setShowToast(true);
-        }
+        history.push('/home');
+        // if (email === 'ali' && password === '123') {
+        //     history.push('/home');
+        // } else {
+        //     setShowToast(true);
+        // }
     };
 
     return (
