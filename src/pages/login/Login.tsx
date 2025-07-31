@@ -1,49 +1,71 @@
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonButton, IonItem, IonLabel, IonToast } from '@ionic/react';
-import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
+import {
+  IonPage,
+  IonContent,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonButton,
+  IonAlert
+} from '@ionic/react';
+import { useHistory } from 'react-router';
 
 const Login: React.FC = () => {
-    const history = useHistory();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [showToast, setShowToast] = useState(false);
+  const history = useHistory();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
 
-    const handleLogin = () => {
-        history.push('/home');
-        // if (email === 'ali' && password === '123') {
-        //     history.push('/home');
-        // } else {
-        //     setShowToast(true);
-        // }
-    };
+  const handleLogin = () => {
+    if (username === 'ali' && password === '123') {
+      history.push('/home');
+    } else {
+      setShowAlert(true);
+    }
+  };
 
-    return (
-        <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>Login Page</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-            <IonContent className="ion-padding">
-                <IonItem>
-                    <IonLabel position="floating">Username</IonLabel>
-                    <IonInput type="email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} />
-                </IonItem>
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>تسجيل الدخول</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding" fullscreen>
+        <IonItem>
+          <IonInput label="اسم المستخدم" labelPlacement="floating"
+            value={username}
+            onIonChange={(e) => setUsername(e.detail.value!)}
+            clearInput={true}
+            type="text"
+          />
+        </IonItem>
+        
+        <IonItem className='ion-margin-top'>
+          <IonInput label="كلمة المرور" labelPlacement="floating"
+            value={password}
+            clearInput={true}
+            onIonChange={(e) => setPassword(e.detail.value!)}
+            type="password"
+          />
+        </IonItem>
+        <IonButton expand="block" onClick={handleLogin} className="ion-margin-top">
+          تسجيل الدخول
+        </IonButton>
 
-                <IonItem>
-                    <IonLabel position="floating">Password</IonLabel>
-                    <IonInput type="password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} />
-                </IonItem>
-
-                <IonButton expand="block" className="ion-margin-top" onClick={handleLogin}>
-                    Login
-                </IonButton>
-
-                <IonToast isOpen={showToast} color="danger" duration={2000}
-                    message="Invalid credentials" onDidDismiss={() => setShowToast(false)} />
-            </IonContent>
-        </IonPage>
-    );
+        <IonAlert
+          isOpen={showAlert}
+          onDidDismiss={() => setShowAlert(false)}
+          header="خطأ"
+          message="اسم المستخدم أو كلمة المرور غير صحيحة"
+          buttons={['موافق']}
+        />
+      </IonContent>
+    </IonPage>
+  );
 };
 
 export default Login;

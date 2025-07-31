@@ -9,7 +9,7 @@ const Home: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Home</IonTitle>
+                    <IonTitle>الصفحة الرئيسية</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
