@@ -1,5 +1,5 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonLabel } from '@ionic/react';
-import { PersonalStatusDepartment } from 'moj-org-management';
+import { PersonalStatusDepartment } from '@moj/org-management';
 
 // helper
 import { getLiferayAuthDetails, getLiferayEnvDetails } from '../../helper/helper';
@@ -14,15 +14,13 @@ const Home: React.FC = () => {
             </IonHeader>
             <IonContent className="ion-padding">
                 <IonLabel>Test Blaybel</IonLabel>
-                <PersonalStatusDepartment isMobileApp={true}
+                <PersonalStatusDepartment 
                     authDetails={getLiferayAuthDetails()}
                     envDetails={getLiferayEnvDetails()}
 
                     viewMode={false}
-                    activeTabNumber="0"
                     departmentId="cee31494-90a5-ef11-a55a-00224886315d"
                     courtId="426e832c-4e9b-ef11-a559-00224886315d"
-                    goToDepartment={() => alert("go to department: ")}
                     goToJudicialDayAgenda={(departmentId) => alert("go to judicial day agenda: " + departmentId)}
                     goBack={(courtId: string) => alert("go back courtId : " + courtId)}
                     onSave={(id) => alert("save: " + id)}

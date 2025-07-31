@@ -12,7 +12,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "moj-org-management": "^0.1.31",
+    "@moj/org-management": "^0.1.27",
     "@capacitor/android": "^7.4.2",
     "@capacitor/app": "7.0.1",
     "@capacitor/core": "7.4.2",

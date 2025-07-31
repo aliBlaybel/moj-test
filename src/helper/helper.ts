@@ -1,4 +1,4 @@
-import { EnvironmentType } from "moj-common";
+import { EnvironmentType } from "@moj/common";
 
 export function getLiferayAuthDetails() {
     return {
